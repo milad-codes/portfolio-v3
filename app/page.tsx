@@ -1,65 +1,90 @@
 import { BioPath } from '@/lib/path';
 import Link from 'next/link';
 
+const pClassName = 'text-[17px] leading-[25.5px] my-5';
+const liClassName =
+  "relative pl-4 pr-1 mb-1 before:content-['■'] before:absolute before:left-0 before:top-0";
+
 export default function Home() {
   return (
-    <main className="max-w-[650px] mx-auto px-6 py-16">
-      <h1 className="text-2xl font-medium text-heading mb-6">Lee Robinson</h1>
+    <main className="max-w-[650px] mx-auto px-8 pt-32 pb-16">
+      <h1 className="text-2xl leading-6 font-medium tracking-[-0.02em] text-heading mb-1">
+        Lee Robinson
+      </h1>
 
-      <p className="mb-6 leading-7">
-        I&apos;m a <Link href={BioPath()}>developer</Link> and{' '}
-        <Link href="#">writer</Link>. I work at{' '}
-        <a href="https://cursor.com" target="_blank" rel="noopener noreferrer">
-          Cursor
-        </a>{' '}
-        teaching about AI. Previously, I worked at{' '}
-        <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">
-          Vercel
-        </a>
-        . I&apos;ve been coding for 15 years and teaching for the second half.
+      <p className={pClassName}>
+        I&apos;m a <Link href={BioPath()}>developer and writer</Link>. I work at{' '}
+        <Link href="/cursor">Cursor</Link> teaching about AI. Previously, I
+        worked at <Link href="/vercel">Vercel</Link>. I&apos;ve been coding for
+        15 years and teaching for the second half.
       </p>
 
-      <p className="mb-6 leading-7">
+      <p className={pClassName}>
         My life&apos;s work is to make technology easy to understand and
         interesting to learn about. I&apos;m a husband, father, and a massive{' '}
-        <Link href="#">music fan</Link>. I last listened to{' '}
-        <Link href="#">How Will I Know</Link> by Whitney Houston.
+        <Link href="/music">music fan</Link>. I last listened to{' '}
+        <a
+          href="https://open.spotify.com/track/51ODNNDZm21HU7wI7cccRr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Latch
+        </a>{' '}
+        by Disclosure, Sam Smith.
       </p>
 
-      <p className="mb-4">Some of my favorite writing includes:</p>
+      <p className={pClassName}>Some of my favorite writing includes:</p>
 
-      <ul className="list-disc list-inside space-y-1.5 mb-6">
-        <li>
-          <Link href="/things-i-believe">Things I Believe</Link>
+      <ul className="text-[17px] leading-[25.5px] list-none p-0 m-0">
+        <li className={liClassName}>
+          <Link href="/beliefs">Things I Believe</Link>
         </li>
-        <li>
-          <Link href="/blog/coding-agents">
-            Coding Agents & Complexity Budgets
-          </Link>
+        <li className={liClassName}>
+          <Link href="/agents">Coding Agents & Complexity Budgets</Link>
         </li>
-        <li>
-          <Link href="/blog/low-level-software">
+        <li className={liClassName}>
+          <Link href="/pixo">
             Building Low-Level Software with Only Coding Agents
           </Link>
         </li>
-        <li>
-          <Link href="/blog/understanding-ai">Understanding AI</Link>
+        <li className={liClassName}>
+          <Link href="/compression">How Does Image Compression Work?</Link>
         </li>
-        <li>
-          <Link href="/about">My Life in Five Minutes</Link>
+        <li className={liClassName}>
+          <Link href="/developer-marketing">Developer Marketing</Link>
         </li>
-        <li>
-          <Link href="/blog/five-years-vercel">
-            5 Things I Learned From 5 Years At Vercel
-          </Link>
+        <li className={liClassName}>
+          <Link href="/ai">Understanding AI</Link>
         </li>
       </ul>
 
-      <p className="leading-7">
-        You can <Link href="#">read my writing</Link> or{' '}
-        <Link href="#">code</Link>, or <Link href="#">follow me online</Link>. I
-        also make <Link href="#">videos</Link>, advise companies, and do angel
-        investing. <Link href="#">Reach out</Link> if interested.
+      <p className={pClassName}>
+        You can <Link href="/writing">read my writing</Link> or{' '}
+        <a
+          href="https://github.com/leerob"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          code
+        </a>
+        , or{' '}
+        <a
+          href="https://x.com/leerob"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          follow me online
+        </a>
+        . I also make{' '}
+        <a
+          href="https://www.youtube.com/@leerob"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          videos
+        </a>
+        , advise companies, and do angel investing.{' '}
+        <a href="mailto:lee@leerob.com">Reach out</a> if interested.
       </p>
     </main>
   );

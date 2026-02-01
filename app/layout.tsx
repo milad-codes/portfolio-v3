@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${stix.className}  antialiased`}>{children}</body>
+      <body className={`${stix.className} antialiased`}>{children}</body>
     </html>
   );
 }
