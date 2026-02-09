@@ -6,7 +6,7 @@ const Beliefs = () => {
   return (
     <main className="max-w-[650px] mx-auto px-6 py-16">
       <h1 className="text-2xl font-medium text-heading mb-1">
-        Things I Believe
+        Things I Believe &nbsp; • &nbsp; By Milad Akbari
       </h1>
       <p className="text-muted mb-10">By Lee Robinson</p>
 

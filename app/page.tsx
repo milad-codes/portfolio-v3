@@ -1,4 +1,4 @@
-import { BioPath } from '@/lib/path';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const pClassName = 'text-[17px] leading-[25.5px] my-5';
@@ -8,32 +8,63 @@ const liClassName =
 export default function Home() {
   return (
     <main className="max-w-[650px] mx-auto px-8 pt-32 pb-16">
-      <h1 className="text-2xl leading-6 font-medium tracking-[-0.02em] text-heading mb-1">
-        Lee Robinson
-      </h1>
+      <div className="flex items-start gap-6 mb-6">
+        <div className="min-w-0 flex-1">
+          <h1 className="text-2xl leading-6 font-medium tracking-[-0.02em] text-heading mb-1">
+            Milad Akbari
+          </h1>
+          <p className="text-[15px] leading-5 text-muted-foreground/90 tracking-[-0.01em]">
+            Building Europe&apos;s leading EV auction platform
+          </p>
+        </div>
+        <div className="shrink-0 -mt-5">
+          <Image
+            src="/original_profile.png"
+            unoptimized
+            alt="Milad Akbari"
+            width={78}
+            height={78}
+            className="rounded-full object-cover w-[61.8px] h-[61.8px] sm:w-[78px] sm:h-[78px]"
+          />
+        </div>
+      </div>
 
       <p className={pClassName}>
-        I&apos;m a <Link href={BioPath()}>developer and writer</Link>. I work at{' '}
-        <Link href="/cursor">Cursor</Link> teaching about AI. Previously, I
-        worked at <Link href="/vercel">Vercel</Link>. I&apos;ve been coding for
-        15 years and teaching for the second half.
-      </p>
-
-      <p className={pClassName}>
-        My life&apos;s work is to make technology easy to understand and
-        interesting to learn about. I&apos;m a husband, father, and a massive{' '}
-        <Link href="/music">music fan</Link>. I last listened to{' '}
+        I&apos;m a full-stack AI engineer{' '}
         <a
-          href="https://open.spotify.com/track/51ODNNDZm21HU7wI7cccRr"
+          href="https://www.aampere.com/"
           target="_blank"
           rel="noopener noreferrer"
+          className="underline"
         >
-          Latch
+          @Aampere
         </a>{' '}
-        by Disclosure, Sam Smith.
+        based in Munich. Previously, I worked at{' '}
+        <a
+          href="https://turkiyemaarif.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          TMV
+        </a>
+        . I&apos;ve been coding for 5+ years, mainly in the TypeScript and
+        Python.
       </p>
 
-      <p className={pClassName}>Some of my favorite writing includes:</p>
+      <p className={pClassName}>
+        My work sits at the intersection of backend systems, modern web, and
+        agentic AI workflows. Recently, my focus has been on agent-based systems
+        using langchain and langgraph designing constrained, observable AI
+        agents that solve real problems.
+      </p>
+      {/* 
+      <p className={pClassName}>
+        I care about clean architecture, scalable systems, and turning complex
+        AI ideas into practical, reliable software.
+      </p> */}
+
+      <p className={pClassName}>Things I Think About</p>
 
       <ul className="text-[17px] leading-[25.5px] list-none p-0 m-0">
         <li className={liClassName}>
@@ -59,32 +90,33 @@ export default function Home() {
       </ul>
 
       <p className={pClassName}>
-        You can <Link href="/writing">read my writing</Link> or{' '}
+        You can{' '}
+        <Link href="/writing" className="underline">
+          read my writing
+        </Link>{' '}
+        or{' '}
         <a
-          href="https://github.com/leerob"
+          href="https://github.com/milad-codes"
           target="_blank"
           rel="noopener noreferrer"
+          className="underline"
         >
           code
         </a>
         , or{' '}
         <a
-          href="https://x.com/leerob"
+          href="https://linkedin.com/in/milad-codes"
           target="_blank"
           rel="noopener noreferrer"
+          className="underline"
         >
           follow me online
         </a>
-        . I also make{' '}
-        <a
-          href="https://www.youtube.com/@leerob"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          videos
-        </a>
-        , advise companies, and do angel investing.{' '}
-        <a href="mailto:lee@leerob.com">Reach out</a> if interested.
+        . I also make videos, advise companies, and do angel investing.{' '}
+        <a href="mailto:contact@miladcodes.com" className="underline">
+          Reach out
+        </a>{' '}
+        if interested.
       </p>
     </main>
   );
