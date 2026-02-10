@@ -2,18 +2,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const pClassName = 'text-[17px] leading-[25.5px] my-5';
-const liClassName =
-  "relative pl-4 pr-1 mb-1 before:content-['■'] before:absolute before:left-0 before:top-0";
 
 export default function Home() {
   return (
-    <main className="max-w-[650px] mx-auto px-8 pt-32 pb-16">
+    <main className="max-w-[650px] mx-auto px-8 pt-24">
       <div className="flex items-start gap-6 mb-6">
         <div className="min-w-0 flex-1">
           <h1 className="text-2xl leading-6 font-medium tracking-[-0.02em] text-heading mb-1">
             Milad Akbari
           </h1>
-          <p className="text-[15px] leading-5 text-muted-foreground/90 tracking-[-0.01em]">
+          <p className="lr-subtitle">
             Building Europe&apos;s leading EV auction platform
           </p>
         </div>
@@ -53,10 +51,12 @@ export default function Home() {
       </p>
 
       <p className={pClassName}>
-        My work sits at the intersection of backend systems, modern web, and
-        agentic AI workflows. Recently, my focus has been on agent-based systems
-        using langchain and langgraph designing constrained, observable AI
-        agents that solve real problems.
+        Most developers pick a side. I never could. I&apos;d be deep in a NestJS
+        module, perfectly happy, then wander over to a Next.js component and
+        lose an hour on details that didn&apos;t need to be that good. I love
+        the moment when a well-typed NestJS service shakes hands with a
+        Langchain and LangGraph workflow and something genuinely useful comes to
+        life.
       </p>
       {/* 
       <p className={pClassName}>
@@ -66,25 +66,25 @@ export default function Home() {
 
       <p className={pClassName}>Things I Think About</p>
 
-      <ul className="text-[17px] leading-[25.5px] list-none p-0 m-0">
-        <li className={liClassName}>
+      <ul className="lr-list">
+        <li className="lr-li">
           <Link href="/beliefs">Things I Believe</Link>
         </li>
-        <li className={liClassName}>
+        <li className="lr-li">
           <Link href="/agents">Coding Agents & Complexity Budgets</Link>
         </li>
-        <li className={liClassName}>
+        <li className="lr-li">
           <Link href="/pixo">
             Building Low-Level Software with Only Coding Agents
           </Link>
         </li>
-        <li className={liClassName}>
+        <li className="lr-li">
           <Link href="/compression">How Does Image Compression Work?</Link>
         </li>
-        <li className={liClassName}>
+        <li className="lr-li">
           <Link href="/developer-marketing">Developer Marketing</Link>
         </li>
-        <li className={liClassName}>
+        <li className="lr-li">
           <Link href="/ai">Understanding AI</Link>
         </li>
       </ul>
@@ -105,7 +105,7 @@ export default function Home() {
         </a>
         , or{' '}
         <a
-          href="https://linkedin.com/in/milad-codes"
+          href="https://www.linkedin.com/in/miladcodes"
           target="_blank"
           rel="noopener noreferrer"
           className="underline"

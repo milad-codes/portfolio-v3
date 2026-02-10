@@ -127,6 +127,32 @@
   }
 }
 
+@layer components {
+  .lr-page {
+    @apply max-w-[650px] mx-auto px-8 pt-24 pb-24;
+  }
+
+  .lr-h1 {
+    @apply text-[34px] leading-[38px] font-medium tracking-[-0.02em] text-heading mb-1;
+  }
+
+  .lr-h2 {
+    @apply text-[18px] leading-[26px] font-medium text-heading;
+  }
+
+  .lr-subtitle {
+    @apply text-[15px] leading-5 text-muted tracking-[-0.01em];
+  }
+
+  .lr-list {
+    @apply list-none p-0 m-0 text-[16px] leading-[24px];
+  }
+
+  .lr-li {
+    @apply relative pl-[12px] pr-1 mb-0 before:content-[''] before:absolute before:left-0 before:top-[0.75em] before:size-[3px] before:-translate-y-1/2 before:rounded-[1px] before:bg-muted/70;
+  }
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
