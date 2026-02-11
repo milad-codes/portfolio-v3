@@ -68,6 +68,7 @@ export default function Home() {
         <li className="lr-li">
           <Link href="/beliefs">Things I Believe</Link>
         </li>
+        {/* // todo: enable when pages are ready
         <li className="lr-li">
           <Link href="/agents">Coding Agents & Complexity Budgets</Link>
         </li>
@@ -85,14 +86,18 @@ export default function Home() {
         <li className="lr-li">
           <Link href="/ai">Understanding AI</Link>
         </li>
+        */}
       </ul>
 
       <p className={pClassName}>
+        {/* // TODO : Add "read my writing" with link to /writing when ready */}
         You can{' '}
+        {/* 
         <Link href="/writing" className="underline">
           read my writing
         </Link>{' '}
         or{' '}
+        */}
         <a
           href="https://github.com/milad-codes"
           target="_blank"
@@ -110,8 +115,15 @@ export default function Home() {
         >
           follow me online
         </a>
-        . I also make videos, advise companies, and do angel investing.{' '}
-        <a href="mailto:contact@miladcodes.com" className="underline">
+        . I spend most of my time learning new frameworks I swore I&apos;d never
+        learn, reading documentation and blogs that were written three hours
+        ago, trying to convince myself I actually need to learn another
+        JavaScript framework.{' '}
+        <a
+          href="mailto:contact@miladcodes.com"
+          className="underline"
+          title="contact@miladcodes.com"
+        >
           Reach out
         </a>{' '}
         if interested.

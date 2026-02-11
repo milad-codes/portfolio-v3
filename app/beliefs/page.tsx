@@ -12,7 +12,7 @@ const Beliefs = () => {
           href="/"
           className="lr-subtitle no-underline text-nav hover:text-nav-hover transition-colors"
         >
-          By Lee Robinson
+          By Milad Akbari
         </Link>
       </div>
 
