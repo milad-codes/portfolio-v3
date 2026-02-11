@@ -1,65 +1,63 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/navigation';
 
-export const metadata: Metadata = { title: 'How to respond to angry feedback' };
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('Metadata');
+  return { title: t('feedbackTitle') };
+}
 
-const items = [
-  'Stay humble.',
-  "Don't take it personally.",
-  'Accept that not everyone will like you.',
-  'If you turn off replies on a post, you already lost.',
-  "Don't use humor or sarcasm when they’re upset.",
-  'Don’t use “corpospeak”. Speak plainly, without jargon.',
-  "If you don't know the answer, admit it and say what you're doing to find out.",
-  'Make people feel heard. Behind almost every frustrated customer is real, helpful feedback.',
-  "Be kind and empathetic when responding to negative feedback. Even if they don't deserve it.",
-  "Don't reject feedback. You're saying they're wrong, which makes them defend themselves.",
-  'Write in public for the secondary audience, not the antagonistic user.',
-  "Explain, don't defend. You can say the exact same thing in a way that sounds bitter or sounds transparent.",
-  'Take more responsibility than seems necessary. Take so much ownership that it surprises people.',
-  'Everything you post either helps or hurts a narrative. Sometimes there can be value in responding carefully if it plays well to spectators.',
-  'If you present yourself in a way that makes people believe you are bragging or cocky, they will be more likely to try and knock you down a peg.',
-  'When discussing deeply technical topics, be exceptionally detailed in your response. Be calm, factual, and empathetic to their concerns.',
-  "If you apologize, fully commit. State the problem, explain the fix, share what you're doing to prevent it. But only apologize if you truly believe it.",
+const FEEDBACK_ITEM_KEYS = [
+  'stayHumble',
+  'dontTakePersonal',
+  'notEveryone',
+  'turnOffReplies',
+  'noHumor',
+  'noCorpospeak',
+  'admitUnknown',
+  'feelHeard',
+  'kindEmpathetic',
+  'dontReject',
+  'writePublic',
+  'explainDontDefend',
+  'takeResponsibility',
+  'narrative',
+  'bragging',
+  'technicalTopics',
+  'apologize',
 ] as const;
 
-export default function FeedbackPage() {
+export default async function FeedbackPage() {
+  const t = await getTranslations('Feedback');
+  const tCommon = await getTranslations('Common');
+
   return (
     <main className="lr-page">
       <div className="mb-10">
-        <h1 className="lr-h1">How to respond to angry feedback</h1>
+        <h1 className="lr-h1">{t('title')}</h1>
         <Link
           href="/"
           className="lr-subtitle no-underline text-nav hover:text-nav-hover transition-colors"
         >
-          By Milad Akbari
+          {tCommon('byAuthor')}
         </Link>
       </div>
 
-      <p className="text-[17px] leading-[25.5px] mb-6">
-        Here&apos;s how I recommend responding to customer feedback:
-      </p>
+      <p className="text-[17px] leading-[25.5px] mb-6">{t('intro')}</p>
 
       <ol className="lr-ol">
-        {items.map((text) => (
-          <li key={text} className="lr-oli">
-            {text}
+        {FEEDBACK_ITEM_KEYS.map((key) => (
+          <li key={key} className="lr-oli">
+            {t(`items.${key}`)}
           </li>
         ))}
       </ol>
 
-      <p className="text-[17px] leading-[25.5px] mt-8">
-        And finally, sometimes you need to post through it. Remember, not
-        everyone is going to like you.
-      </p>
+      <p className="text-[17px] leading-[25.5px] mt-8">{t('closing')}</p>
 
       <hr className="my-10 border-muted/30" />
 
-      <p className="text-[17px] leading-[25.5px] italic">
-        (Some of these are inspired by{' '}
-        <a href="https://x.com/lulumeservey">Lulu</a> from{' '}
-        <a href="https://rostra.co/">Rostra</a>)
-      </p>
+      <p className="text-[17px] leading-[25.5px] italic">{t('inspiredBy')}</p>
     </main>
   );
 }

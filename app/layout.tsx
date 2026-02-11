@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from 'next';
 import { STIX_Two_Text } from 'next/font/google';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
 import './globals.css';
+import { LocaleSwitcher } from '@/components/LocaleSwitcher';
 
 const stix = STIX_Two_Text({ subsets: ['latin'], weight: ['400', '500'] });
 
@@ -11,14 +14,22 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = { themeColor: '#1a1a1a' };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+
   return (
-    <html lang="en">
-      <body className={`${stix.className} antialiased`}>{children}</body>
+    <html lang={locale}>
+      <body className={`${stix.className} antialiased`}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <LocaleSwitcher />
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }

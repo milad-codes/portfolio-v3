@@ -1,60 +1,49 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/navigation';
 
-export const metadata: Metadata = { title: 'My Life in Five Minutes' };
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('Metadata');
+  return { title: t('bioTitle') };
+}
 
-const Bio = () => {
+export default async function BioPage() {
+  const t = await getTranslations('Bio');
+
   return (
     <main className="max-w-[650px] mx-auto px-6 py-16">
-      <h1 className="lr-h1 mb-6">My life in five minutes</h1>
+      <h1 className="lr-h1 mb-6">{t('title')}</h1>
+
+      <p className="mb-6 leading-7">{t('paragraph1')}</p>
 
       <p className="mb-6 leading-7">
-        My parents, and later the internet, taught me I could build anything.
-      </p>
-
-      <p className="mb-6 leading-7">
-        I was five years old when I saw <Link href="#">October Sky</Link> (1999)
-        in theaters. It&apos;s about a kid inspired by the launch of Sputnik,
-        who takes up rocketry against his father&apos;s wishes.
+        {t('paragraph2Prefix')}{' '}
+        <Link href="#">October Sky</Link> ({t('paragraph2Suffix')})
       </p>
 
       <details className="mb-6">
         <summary className="cursor-pointer text-muted hover:text-text">
-          Spoilers: Watch the ending of October Sky
+          {t('spoilersTitle')}
         </summary>
         <p className="mt-3 leading-7 pl-4 border-l-2 border-muted/30">
-          Homer wins the science fair and earns a scholarship. He goes on to
-          work for NASA as an engineer.
+          {t('spoilersContent')}
         </p>
       </details>
 
-      <p className="mb-10 leading-7">
-        I was enamored with rockets, and unlike Homer&apos;s dad in the film, my
-        dad bought me my first model rocket set. My parents started and ran a
-        construction business for over 40 years.
-      </p>
+      <p className="mb-10 leading-7">{t('paragraph3')}</p>
 
       <div className="grid grid-cols-2 gap-4 mb-10">
         <div className="aspect-4/3 bg-white/5 rounded flex items-center justify-center text-muted text-sm">
-          Childhood photo
+          {t('childhoodPhoto')}
         </div>
         <div className="aspect-4/3 bg-white/5 rounded flex items-center justify-center text-muted text-sm">
-          Rocket diagram
+          {t('rocketDiagram')}
         </div>
       </div>
 
-      <p className="mb-6 leading-7">
-        I wanted to understand every piece of that rocket. Why were there
-        different body shapes? How were the engines made? Could we make even{' '}
-        <em>bigger</em> rockets?
-      </p>
+      <p className="mb-6 leading-7">{t('paragraph4')}</p>
 
-      <p className="leading-7">
-        I didn&apos;t know it at the time, but I was going to be an engineer.
-        This obsession with building things continued throughout my childhood.
-      </p>
+      <p className="leading-7">{t('paragraph5')}</p>
     </main>
   );
-};
-
-export default Bio;
+}

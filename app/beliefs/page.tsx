@@ -1,205 +1,179 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/navigation';
 
-export const metadata: Metadata = { title: 'Things I Believe' };
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('Metadata');
+  return { title: t('beliefsTitle') };
+}
 
-const Beliefs = () => {
+export default async function BeliefsPage() {
+  const t = await getTranslations('Beliefs');
+  const tCommon = await getTranslations('Common');
+
   return (
     <main className="lr-page lr-beliefs">
       <div className="mb-16">
-        <h1 className="lr-h1">Things I Believe</h1>
+        <h1 className="lr-h1">{t('title')}</h1>
         <Link
           href="/"
           className="lr-subtitle no-underline text-nav hover:text-nav-hover transition-colors"
         >
-          By Milad Akbari
+          {tCommon('byAuthor')}
         </Link>
       </div>
 
       <div className="space-y-16">
         <section>
-          <h2 className="lr-h2 mb-4">Shipping fast beats the best strategy</h2>
+          <h2 className="lr-h2 mb-4">{t('shippingFast')}</h2>
           <ul className="lr-list">
             <li className="lr-li">
-              Speed is a{' '}
+              {t('speedSuperpower')}{' '}
               <a href="https://x.com/thejamescad/status/1929324444176044047">
-                superpower
+                {t('superpower')}
               </a>
             </li>
-            <li className="lr-li">Create a bias toward shipping</li>
-            <li className="lr-li">Small teams ship faster</li>
+            <li className="lr-li">{t('biasShipping')}</li>
+            <li className="lr-li">{t('smallTeams')}</li>
             <li className="lr-li">
               <a href="https://x.com/leerob/status/1929727742821413331">
-                AI-native
+                {t('aiNative')}
               </a>{' '}
-              teams will move 10x faster than those not willing to change
+              {t('aiNativeRest')}
             </li>
-            <li className="lr-li">
-              {'Landings > launches (i.e. product adoption > shipping code)'}
-            </li>
-            <li className="lr-li">
-              Listen, build, ship, tell the customer, then repeat forever
-            </li>
+            <li className="lr-li">{t('landingsLaunches')}</li>
+            <li className="lr-li">{t('listenBuildShip')}</li>
           </ul>
         </section>
 
         <section>
-          <h2 className="lr-h2 mb-4">You have no career ceiling</h2>
+          <h2 className="lr-h2 mb-4">{t('noCareerCeiling')}</h2>
           <ul className="lr-list">
-            <li className="lr-li">Grit &gt; talent</li>
+            <li className="lr-li">{t('gritTalent')}</li>
             <li className="lr-li">
-              There’s no substitute for{' '}
+              {t('puttingInHoursLink')}{' '}
               <a href="https://www.youtube.com/watch?v=RDyg_41QF1w">
-                putting in the hours
+                {t('puttingInHours')}
               </a>
             </li>
             <li className="lr-li">
-              Get{' '}
+              {t('getBetter')}{' '}
               <a href="https://x.com/leerob/status/1841226051554308229">
-                1% better
+                1%
               </a>{' '}
-              every day
+              {t('betterDaily')}
             </li>
           </ul>
         </section>
 
         <section>
-          <h2 className="lr-h2 mb-4">Be ruthlessly truth seeking</h2>
+          <h2 className="lr-h2 mb-4">{t('truthSeeking')}</h2>
           <ul className="lr-list">
-            <li className="lr-li">The truth can be painful</li>
-            <li className="lr-li">You can just change your mind if wrong</li>
-            <li className="lr-li">Have strong opinions, loosely held</li>
-            <li className="lr-li">Maximize your exposure hours</li>
-            <li className="lr-li">&quot;Anecdata&quot; &gt; data</li>
-            <li className="lr-li">
-              Seek the collective truth, not just one opinion
-            </li>
+            <li className="lr-li">{t('truthPainful')}</li>
+            <li className="lr-li">{t('changeMind')}</li>
+            <li className="lr-li">{t('strongOpinions')}</li>
+            <li className="lr-li">{t('exposureHours')}</li>
+            <li className="lr-li">{t('anecdata')}</li>
+            <li className="lr-li">{t('collectiveTruth')}</li>
           </ul>
         </section>
 
         <section>
-          <h2 className="lr-h2 mb-4">Communication is the job</h2>
+          <h2 className="lr-h2 mb-4">{t('communicationJob')}</h2>
           <ul className="lr-list">
             <li className="lr-li">
-              <a href="https://paulgraham.com/talk.html">Clear writing</a> is
-              clear thinking
+              <a href="https://paulgraham.com/talk.html">{t('clearWriting')}</a>{' '}
+              {t('clearThinking')}
             </li>
             <li className="lr-li">
-              Everyone (yes, you) needs to become a{' '}
+              {t('everyoneWriter')}{' '}
               <a href="https://sorfis.com/wp-content/uploads/2021/09/Writing-Tips-Scott-Adams-DFW-Sowin-compilation-Zweig.pdf">
-                better writer
+                {t('betterWriter')}
               </a>
             </li>
+            <li className="lr-li">{t('leadersClarity')}</li>
+            <li className="lr-li">{t('takingNotes')}</li>
+            <li className="lr-li">{t('mismatchedExpectations')}</li>
             <li className="lr-li">
-              Leaders step up to provide clarity when absent
-            </li>
-            <li className="lr-li">
-              Be the person taking notes, even if it’s just for yourself
-            </li>
-            <li className="lr-li">Mismatched expectations lead to sadness</li>
-            <li className="lr-li">
-              Slack pro tip: anticipate objections before hitting send, then{' '}
+              {t('slackProTip')}{' '}
               <a href="https://newsletter.weskao.com/p/super-specific-feedback">
-                address them
+                {t('addressThem')}
               </a>
             </li>
           </ul>
         </section>
 
         <section>
-          <h2 className="lr-h2 mb-4">
-            Education is the best form of developer marketing
-          </h2>
+          <h2 className="lr-h2 mb-4">{t('educationMarketing')}</h2>
           <ul className="lr-list">
-            <li className="lr-li">Be authentic and own your failures</li>
-            <li className="lr-li">
-              Never use the word &quot;webinar&quot; ever again
-            </li>
-            <li className="lr-li">Being helpful compounds</li>
+            <li className="lr-li">{t('authenticFailures')}</li>
+            <li className="lr-li">{t('neverWebinar')}</li>
+            <li className="lr-li">{t('helpfulCompounds')}</li>
           </ul>
         </section>
 
         <section>
-          <h2 className="lr-h2 mb-4">
-            Leadership means owning outcomes beyond the org chart
-          </h2>
+          <h2 className="lr-h2 mb-4">{t('leadershipOutcomes')}</h2>
           <ul className="lr-list">
-            <li className="lr-li">Influence &gt; titles</li>
-            <li className="lr-li">
-              Leaders have to do the work themselves <em>and</em> delegate
-            </li>
-            <li className="lr-li">You can write your own playbook</li>
-            <li className="lr-li">
-              Study what worked for others, then take your own path
-            </li>
+            <li className="lr-li">{t('influenceTitles')}</li>
+            <li className="lr-li">{t('leadersWork')}</li>
+            <li className="lr-li">{t('writePlaybook')}</li>
+            <li className="lr-li">{t('studyOthers')}</li>
           </ul>
         </section>
 
         <section>
-          <h2 className="lr-h2 mb-4">Work can also be your hobby</h2>
+          <h2 className="lr-h2 mb-4">{t('workHobby')}</h2>
           <ul className="lr-list">
-            <li className="lr-li">
-              This doesn’t mean you can’t have other hobbies
-            </li>
-            <li className="lr-li">
-              Passion + boundaries &gt; mythical &quot;work-life balance&quot;
-            </li>
-            <li className="lr-li">
-              Your best work comes from following your curiosity
-            </li>
+            <li className="lr-li">{t('otherHobbies')}</li>
+            <li className="lr-li">{t('passionBoundaries')}</li>
+            <li className="lr-li">{t('curiosity')}</li>
           </ul>
         </section>
 
         <section>
-          <h2 className="lr-h2 mb-4">Demos &gt; memos</h2>
+          <h2 className="lr-h2 mb-4">{t('demosMemos')}</h2>
           <ul className="lr-list">
             <li className="lr-li">
-              You could have built a prototype in{' '}
-              <a href="https://v0.dev/">v0</a> during the meeting
+              {t('v0Prototype')}{' '}
+              <a href="https://v0.dev/">v0</a>
             </li>
             <li className="lr-li">
-              Only ship things you&apos;re{' '}
+              {t('shipExcited')}{' '}
               <a href="https://x.com/rauchg/status/1932126547609334017">
-                excited about yourself
+                {t('excitedAbout')}
               </a>
             </li>
           </ul>
         </section>
 
         <section>
-          <h2 className="lr-h2 mb-4">
-            Hiring is what separates good leaders from great
-          </h2>
+          <h2 className="lr-h2 mb-4">{t('hiringLeaders')}</h2>
           <ul className="lr-list">
             <li className="lr-li">
-              There are two hiring answers:{' '}
-              <a href="https://sive.rs/n">hell yes</a> or no
+              {t('twoAnswers')}{' '}
+              <a href="https://sive.rs/n">{t('hellYes')}</a> {t('orNo')}
             </li>
-            <li className="lr-li">Growth potential &gt; current skill</li>
-            <li className="lr-li">Hire people you can learn from</li>
-            <li className="lr-li">
-              Hire people you would someday be happy working for
-            </li>
-            <li className="lr-li">
-              Favorite interview question: what work are you most proud of?
-            </li>
+            <li className="lr-li">{t('growthPotential')}</li>
+            <li className="lr-li">{t('hireLearnFrom')}</li>
+            <li className="lr-li">{t('hireWorkFor')}</li>
+            <li className="lr-li">{t('interviewQuestion')}</li>
           </ul>
         </section>
 
         <section>
-          <h2 className="lr-h2 mb-4">Always try to assume good intent</h2>
+          <h2 className="lr-h2 mb-4">{t('assumeGoodIntent')}</h2>
           <ul className="lr-list">
-            <li className="lr-li">Lead with empathy</li>
-            <li className="lr-li">They might just be having a bad day</li>
+            <li className="lr-li">{t('leadEmpathy')}</li>
+            <li className="lr-li">{t('badDay')}</li>
             <li className="lr-li">
-              Criticism is <Link href="/feedback">good feedback</Link> if you
-              listen unemotionally
+              {t('criticismIs')}{' '}
+              <Link href="/feedback">{tCommon('goodFeedback')}</Link>{' '}
+              {t('criticismRest')}
             </li>
           </ul>
         </section>
       </div>
     </main>
   );
-};
-
-export default Beliefs;
+}
