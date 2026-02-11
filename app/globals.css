@@ -135,7 +135,7 @@
   }
 
   .lr-h1 {
-    @apply text-2xl leading-6 font-medium tracking-[-0.02em] text-heading mb-1;
+    @apply text-[34px] leading-[38px] font-medium tracking-[-0.02em] text-heading mb-1;
   }
 
   .lr-h2 {
@@ -164,6 +164,18 @@
     height: 4.5px;
     border-radius: 1px;
     background-color: color-mix(in oklab, var(--color-muted) 80%, transparent);
+  }
+
+  .lr-ol {
+    @apply list-decimal pl-6 m-0 text-[17px] leading-[25.5px];
+  }
+
+  .lr-oli {
+    @apply pl-0;
+  }
+
+  .lr-ol > li::marker {
+    color: color-mix(in oklab, var(--color-muted) 80%, transparent);
   }
 
   /* Page-specific tweaks (closer to leerob.com/beliefs) */

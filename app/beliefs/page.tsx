@@ -71,7 +71,9 @@ const Beliefs = () => {
             <li className="lr-li">Have strong opinions, loosely held</li>
             <li className="lr-li">Maximize your exposure hours</li>
             <li className="lr-li">&quot;Anecdata&quot; &gt; data</li>
-            <li className="lr-li">Seek the collective truth, not just one opinion</li>
+            <li className="lr-li">
+              Seek the collective truth, not just one opinion
+            </li>
           </ul>
         </section>
 
@@ -79,8 +81,8 @@ const Beliefs = () => {
           <h2 className="lr-h2 mb-4">Communication is the job</h2>
           <ul className="lr-list">
             <li className="lr-li">
-              <a href="https://paulgraham.com/talk.html">Clear writing</a> is clear
-              thinking
+              <a href="https://paulgraham.com/talk.html">Clear writing</a> is
+              clear thinking
             </li>
             <li className="lr-li">
               Everyone (yes, you) needs to become a{' '}
@@ -88,7 +90,9 @@ const Beliefs = () => {
                 better writer
               </a>
             </li>
-            <li className="lr-li">Leaders step up to provide clarity when absent</li>
+            <li className="lr-li">
+              Leaders step up to provide clarity when absent
+            </li>
             <li className="lr-li">
               Be the person taking notes, even if it’s just for yourself
             </li>
@@ -108,7 +112,9 @@ const Beliefs = () => {
           </h2>
           <ul className="lr-list">
             <li className="lr-li">Be authentic and own your failures</li>
-            <li className="lr-li">Never use the word &quot;webinar&quot; ever again</li>
+            <li className="lr-li">
+              Never use the word &quot;webinar&quot; ever again
+            </li>
             <li className="lr-li">Being helpful compounds</li>
           </ul>
         </section>
@@ -161,7 +167,9 @@ const Beliefs = () => {
         </section>
 
         <section>
-          <h2 className="lr-h2 mb-4">Hiring is what separates good leaders from great</h2>
+          <h2 className="lr-h2 mb-4">
+            Hiring is what separates good leaders from great
+          </h2>
           <ul className="lr-list">
             <li className="lr-li">
               There are two hiring answers:{' '}
@@ -184,9 +192,8 @@ const Beliefs = () => {
             <li className="lr-li">Lead with empathy</li>
             <li className="lr-li">They might just be having a bad day</li>
             <li className="lr-li">
-              Criticism is{' '}
-              <a href="https://leerob.com/feedback">good feedback</a> if you listen
-              unemotionally
+              Criticism is <Link href="/feedback">good feedback</Link> if you
+              listen unemotionally
             </li>
           </ul>
         </section>
