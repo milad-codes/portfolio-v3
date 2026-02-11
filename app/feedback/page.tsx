@@ -4,7 +4,13 @@ import { Link } from '@/i18n/navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Metadata');
-  return { title: t('feedbackTitle') };
+  return {
+    title: t('feedbackTitle'),
+    description: t('feedbackDescription'),
+    alternates: {
+      canonical: '/feedback',
+    },
+  };
 }
 
 const FEEDBACK_ITEM_KEYS = [

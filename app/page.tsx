@@ -1,8 +1,21 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 
 const pClassName = 'text-[17px] leading-[25.5px] my-5';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('Metadata');
+
+  return {
+    title: t('homeTitle'),
+    description: t('homeDescription'),
+    alternates: {
+      canonical: '/',
+    },
+  };
+}
 
 export default async function Home() {
   const t = await getTranslations('Home');

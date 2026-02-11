@@ -4,7 +4,13 @@ import { Link } from '@/i18n/navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Metadata');
-  return { title: t('writingTitle') };
+  return {
+    title: t('writingTitle'),
+    description: t('writingDescription'),
+    alternates: {
+      canonical: '/writing',
+    },
+  };
 }
 
 const POST_KEYS = [

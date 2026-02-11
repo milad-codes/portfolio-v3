@@ -155,8 +155,12 @@
     "homeTitle": "Milad Akbari",
     "homeDescription": "Fullstack-Entwickler @Aampere",
     "beliefsTitle": "Woran ich glaube",
+    "beliefsDescription": "Prinzipien über schnelles Ausliefern, Wahrheitssuche, Kommunikation und gutes Product-Building.",
     "bioTitle": "Mein Leben in fünf Minuten",
+    "bioDescription": "Eine kurze Bio: Neugier, Raketen und das Lernen, Dinge im Internet zu bauen.",
     "feedbackTitle": "Wie man auf wütendes Feedback reagiert",
-    "writingTitle": "Schreiben"
+    "feedbackDescription": "Ein praktischer Leitfaden, um unzufriedenen Kunden mit Empathie und Klarheit zu antworten.",
+    "writingTitle": "Schreiben",
+    "writingDescription": "Texte und Notizen über Software, Developer Experience und Produktentwicklung."
   }
 }

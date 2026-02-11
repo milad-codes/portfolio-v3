@@ -4,7 +4,13 @@ import { Link } from '@/i18n/navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Metadata');
-  return { title: t('bioTitle') };
+  return {
+    title: t('bioTitle'),
+    description: t('bioDescription'),
+    alternates: {
+      canonical: '/bio',
+    },
+  };
 }
 
 export default async function BioPage() {
