@@ -23,8 +23,11 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className={`${stix.className} antialiased`}>
+    <html lang={locale} suppressHydrationWarning>
+      <body
+        className={`${stix.className} antialiased`}
+        suppressHydrationWarning
+      >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <LocaleSwitcher />
           {children}
