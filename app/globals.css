@@ -79,6 +79,8 @@
   --color-text: #eaeaea;
   --color-heading: #f2f2f2;
   --color-muted: #888;
+  --color-nav: #afafaf;
+  --color-nav-hover: #f2f2f2;
   --font-serif: 'STIX Two Text', serif;
 
   --color-background: var(--background);
@@ -141,15 +143,33 @@
   }
 
   .lr-subtitle {
-    @apply text-[15px] leading-5 text-muted tracking-[-0.01em];
+    @apply text-[16px] leading-5 text-muted tracking-[-0.01em];
   }
 
   .lr-list {
-    @apply list-none p-0 m-0 text-[16px] leading-[24px];
+    @apply list-none p-0 m-0 text-[17px] leading-[25.5px];
   }
 
   .lr-li {
-    @apply relative pl-[12px] pr-1 mb-0 before:content-[''] before:absolute before:left-0 before:top-[0.75em] before:size-[3px] before:-translate-y-1/2 before:rounded-[1px] before:bg-muted/70;
+    @apply relative pl-[12px] pr-1 mb-0;
+  }
+
+  .lr-li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75em;
+    transform: translateY(-50%);
+    width: 4.5px;
+    height: 4.5px;
+    border-radius: 1px;
+    background-color: color-mix(in oklab, var(--color-muted) 80%, transparent);
+  }
+
+  /* Page-specific tweaks (closer to leerob.com/beliefs) */
+  .lr-beliefs .lr-h2 {
+    @apply text-[20px] leading-[28px] tracking-[-0.025em];
+    text-wrap: balance;
   }
 }
 
@@ -157,9 +177,10 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-serif);
+  line-height: 1.5;
 }
 
-a {
+a:not(.no-underline) {
   text-decoration: underline;
   text-underline-offset: 2.5px;
   text-decoration-thickness: 1px;
@@ -167,6 +188,6 @@ a {
   transition: text-decoration-color 0.2s;
 }
 
-a:hover {
+a:not(.no-underline):hover {
   text-decoration-color: currentColor;
 }
