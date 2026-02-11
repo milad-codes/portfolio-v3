@@ -8,9 +8,7 @@ export default function Home() {
     <main className="max-w-[650px] mx-auto px-8 pt-24">
       <div className="flex items-start gap-6 mb-6">
         <div className="min-w-0 flex-1">
-          <h1 className="text-2xl leading-6 font-medium tracking-[-0.02em] text-heading mb-1">
-            Milad Akbari
-          </h1>
+          <h1 className="lr-h1">Milad Akbari</h1>
           <p className="lr-subtitle">
             Building Europe&apos;s leading EV auction platform
           </p>

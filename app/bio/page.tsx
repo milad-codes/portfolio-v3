@@ -6,9 +6,7 @@ export const metadata: Metadata = { title: 'My Life in Five Minutes' };
 const Bio = () => {
   return (
     <main className="max-w-[650px] mx-auto px-6 py-16">
-      <h1 className="text-2xl font-medium text-heading mb-6">
-        My life in five minutes
-      </h1>
+      <h1 className="lr-h1 mb-6">My life in five minutes</h1>
 
       <p className="mb-6 leading-7">
         My parents, and later the internet, taught me I could build anything.

@@ -135,7 +135,7 @@
   }
 
   .lr-h1 {
-    @apply text-[34px] leading-[38px] font-medium tracking-[-0.02em] text-heading mb-1;
+    @apply text-2xl leading-6 font-medium tracking-[-0.02em] text-heading mb-1;
   }
 
   .lr-h2 {
