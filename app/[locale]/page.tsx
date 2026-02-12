@@ -45,7 +45,6 @@ export default async function Home({ params }: Props) {
         <div className="shrink-0 -mt-5">
           <Image
             src="/original_profile.png"
-            unoptimized
             alt="Milad Akbari"
             width={78}
             height={78}
