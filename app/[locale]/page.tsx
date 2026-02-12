@@ -1,12 +1,22 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
+import { routing } from '@/i18n/routing';
+import { hasLocale } from 'next-intl';
+import { notFound } from 'next/navigation';
 
 const pClassName = 'text-[17px] leading-[25.5px] my-5';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('Metadata');
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
+
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
 
   return {
     title: t('homeTitle'),
@@ -17,7 +27,11 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function Home() {
+export default async function Home({ params }: Props) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
+  setRequestLocale(locale);
+
   const t = await getTranslations('Home');
   const tCommon = await getTranslations('Common');
 

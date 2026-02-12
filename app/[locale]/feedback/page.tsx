@@ -1,9 +1,19 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { hasLocale } from 'next-intl';
+import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/navigation';
+import { routing } from '@/i18n/routing';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('Metadata');
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
+
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
   return {
     title: t('feedbackTitle'),
     description: t('feedbackDescription'),
@@ -33,7 +43,11 @@ const FEEDBACK_ITEM_KEYS = [
   'apologize',
 ] as const;
 
-export default async function FeedbackPage() {
+export default async function FeedbackPage({ params }: Props) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
+  setRequestLocale(locale);
+
   const t = await getTranslations('Feedback');
   const tCommon = await getTranslations('Common');
 
@@ -67,3 +81,4 @@ export default async function FeedbackPage() {
     </main>
   );
 }
+
