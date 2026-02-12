@@ -6,11 +6,11 @@ const ROUTES: Array<{
   changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'];
   priority: number;
 }> = [
-  { path: '/', changeFrequency: 'weekly', priority: 1 },
-  { path: '/bio', changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/beliefs', changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/writing', changeFrequency: 'weekly', priority: 0.7 },
-  { path: '/feedback', changeFrequency: 'monthly', priority: 0.6 },
+  { path: '/', changeFrequency: 'daily', priority: 1.0 },
+  { path: '/bio', changeFrequency: 'weekly', priority: 0.8 },
+  { path: '/beliefs', changeFrequency: 'weekly', priority: 0.8 },
+  { path: '/writing', changeFrequency: 'weekly', priority: 0.8 },
+  { path: '/feedback', changeFrequency: 'weekly', priority: 0.8 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

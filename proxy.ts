@@ -4,6 +4,7 @@ import type { NextRequest } from 'next/server';
 const LOCALE_COOKIE = 'NEXT_LOCALE';
 const LOCALES = ['en', 'de'] as const;
 const DEFAULT_LOCALE = 'en';
+const NEXT_INTL_LOCALE_HEADER = 'X-NEXT-INTL-LOCALE';
 
 type Locale = (typeof LOCALES)[number];
 
@@ -23,7 +24,14 @@ function setLocaleCookie(response: NextResponse, locale: Locale) {
   response.cookies.set(LOCALE_COOKIE, locale, {
     path: '/',
     maxAge: 365 * 24 * 60 * 60,
+    sameSite: 'lax',
   });
+}
+
+function requestHeadersWithLocale(request: NextRequest, locale: Locale): Headers {
+  const headers = new Headers(request.headers);
+  headers.set(NEXT_INTL_LOCALE_HEADER, locale);
+  return headers;
 }
 
 export function proxy(request: NextRequest) {
@@ -50,10 +58,13 @@ export function proxy(request: NextRequest) {
   }
 
   const locale = pickLocale(request);
-  const rewriteUrl = url.clone();
-  rewriteUrl.pathname = `/${locale}${url.pathname}`;
+  const rewriteUrl = new URL(request.url);
+  const suffix = url.pathname === '/' ? '' : url.pathname;
+  rewriteUrl.pathname = `/${locale}${suffix}`;
 
-  const response = NextResponse.rewrite(rewriteUrl);
+  const response = NextResponse.rewrite(rewriteUrl, {
+    request: { headers: requestHeadersWithLocale(request, locale) },
+  });
   response.headers.set('Vary', 'Accept-Language, Cookie');
 
   const existing = request.cookies.get(LOCALE_COOKIE)?.value;
