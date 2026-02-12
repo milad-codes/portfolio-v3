@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { STIX_Two_Text } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, getTranslations } from 'next-intl/server';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 import { LocaleSwitcher } from '@/components/LocaleSwitcher';
 import { SITE_CONFIG } from '@/lib/constants';
@@ -90,6 +91,7 @@ export default async function RootLayout({
   const locale = await getLocale();
   const messages = await getMessages();
   const siteUrl = getSiteUrl();
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   const personJsonLd = {
     '@context': 'https://schema.org',
@@ -124,6 +126,7 @@ export default async function RootLayout({
           <LocaleSwitcher />
           {children}
         </NextIntlClientProvider>
+        {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
       </body>
     </html>
   );
