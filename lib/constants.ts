@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: 'Milad Akbari',
-  title: 'Full Stack AI Engineer | Backend Focus',
-  description: 'Milad Akbari, a Full Stack AI Engineer in Munich focused on backend services, APIs, databases and AI applications.',
+  title: 'Full Stack AI Engineer',
+  description: 'Milad Akbari, a Full Stack AI Engineer in Munich building backend systems, web applications and AI-enabled workflows.',
   url: 'https://www.miladcodes.com',
   links: {
     github: 'https://github.com/milad-codes',
