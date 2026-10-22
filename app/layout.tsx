@@ -6,7 +6,7 @@ import { SITE_CONFIG } from '@/lib/constants';
 import './globals.css';
 
 const stix = STIX_Two_Text({ subsets: ['latin'], weight: ['400', '500'] });
-const title = 'Milad Akbari | Full Stack AI Engineer | Backend Focus';
+const title = `${SITE_CONFIG.name} | ${SITE_CONFIG.title}`;
 const description = SITE_CONFIG.description;
 
 export const metadata: Metadata = {
