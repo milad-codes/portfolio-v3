@@ -1,6 +1,6 @@
 {
   "Home": {
-    "subtitle": "Full Stack AI Engineer | Backend-Fokus",
+    "subtitle": "Full Stack AI Engineer",
     "location": "München, Deutschland",
     "navigation": "Portfolio-Navigation",
     "about": "Über mich",
@@ -35,7 +35,7 @@
   "Bio": {
     "back": "Zurück zum Portfolio",
     "title": "Über mich",
-    "intro": "Ich bin Milad Akbari, Full Stack AI Engineer in München. Mein Schwerpunkt liegt auf Backend-Entwicklung, APIs und Datenbanken, ergänzt durch Frontend- und KI-Arbeit am Produkt.",
+    "intro": "Ich bin Milad Akbari, Full Stack AI Engineer in München. Ich entwickle Backend-Systeme, Webanwendungen und KI-gestützte Abläufe.",
     "aampere": "Seit November 2024 arbeite ich als Full Stack Developer bei Aampere an der Händlerplattform für den europäischen Markt für Elektrofahrzeuge. Dazu gehören TypeScript- und NestJS-Dienste, Next.js- und React-Anwendungen sowie KI-gestützte Abläufe.",
     "maarif": "Zuvor entwickelte ich Lernmanagement- und Finanzverwaltungssoftware bei der Turkish Maarif Foundation. Dort begann ich im Juni 2020 als Working Student und arbeitete von Februar 2021 bis Mai 2023 als Full Stack Developer.",
     "education": "Ich habe einen Bachelorabschluss in Informatik von der Kardan University, an der ich von 2017 bis 2021 studierte.",
@@ -43,8 +43,8 @@
     "experience": "Meinen vollständigen Werdegang auf LinkedIn ansehen"
   },
   "Metadata": {
-    "homeTitle": "Milad Akbari | Full Stack AI Engineer | Backend-Fokus",
-    "homeDescription": "Full Stack AI Engineer in München. Backend-Dienste, APIs, Datenbanken und KI-Anwendungen mit TypeScript, Python, NestJS und Next.js. Projekte und Quellcode entdecken.",
+    "homeTitle": "Milad Akbari | Full Stack AI Engineer",
+    "homeDescription": "Full Stack AI Engineer in München. Backend-Systeme, Webanwendungen und KI-gestützte Abläufe mit TypeScript, Python, NestJS und Next.js. Projekte und Quellcode entdecken.",
     "bioTitle": "Über Milad Akbari | Full Stack AI Engineer",
     "bioDescription": "Beruflicher Hintergrund, Softwareentwicklung bei Aampere und der Turkish Maarif Foundation sowie Informatikstudium."
   }

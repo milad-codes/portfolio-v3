@@ -1,6 +1,6 @@
 {
   "Home": {
-    "subtitle": "Full Stack AI Engineer | Backend Focus",
+    "subtitle": "Full Stack AI Engineer",
     "location": "Munich, Germany",
     "navigation": "Portfolio navigation",
     "about": "About",
@@ -35,7 +35,7 @@
   "Bio": {
     "back": "Back to portfolio",
     "title": "About me",
-    "intro": "I'm Milad Akbari, a Full Stack AI Engineer based in Munich. My main focus is backend development, APIs and databases, with frontend and AI work connected to the product.",
+    "intro": "I'm Milad Akbari, a Full Stack AI Engineer based in Munich. I work across backend systems, web applications and AI-enabled workflows.",
     "aampere": "Since November 2024, I've worked as a Full Stack Developer at Aampere, developing its Dealer Platform for the European electric vehicle market. My work covers TypeScript and NestJS services, Next.js and React applications, and AI-assisted workflows.",
     "maarif": "Before Aampere, I developed learning management and financial administration software at the Turkish Maarif Foundation. I joined as a Working Student in June 2020 and worked as a Full Stack Developer from February 2021 to May 2023.",
     "education": "I hold a bachelor's degree in Computer Science from Kardan University, where I studied from 2017 to 2021.",
@@ -43,8 +43,8 @@
     "experience": "View my full experience on LinkedIn"
   },
   "Metadata": {
-    "homeTitle": "Milad Akbari | Full Stack AI Engineer | Backend Focus",
-    "homeDescription": "Full Stack AI Engineer in Munich. Backend services, APIs, databases and AI applications with TypeScript, Python, NestJS and Next.js. Explore my work and source code.",
+    "homeTitle": "Milad Akbari | Full Stack AI Engineer",
+    "homeDescription": "Full Stack AI Engineer in Munich. Backend systems, web applications and AI workflows with TypeScript, Python, NestJS and Next.js. Explore my work and source code.",
     "bioTitle": "About Milad Akbari | Full Stack AI Engineer",
     "bioDescription": "Professional background, software engineering experience at Aampere and the Turkish Maarif Foundation, and Computer Science education."
   }
