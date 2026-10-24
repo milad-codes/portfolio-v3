@@ -1,36 +1,36 @@
-# Milad Akbari: engineering portfolio
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Personal portfolio for a Full Stack AI Engineer based in Munich, with a backend engineering focus.
+## Getting Started
 
-[Live website](https://miladcodes.com) · [LinkedIn](https://www.linkedin.com/in/miladcodes) · [GitHub](https://github.com/milad-codes)
+First, run the development server:
 
-## What this repository contains
-
-- English and German portfolio copy, with a cookie-based language switch.
-- A professional biography and source-linked case notes for three earlier API projects.
-- Canonical metadata, Open Graph images, Person structured data, robots.txt and a sitemap using the public domain.
-- A shared profile photo and a simple initials favicon.
-
-Built with Next.js, React, TypeScript, Tailwind CSS and next-intl. Deployed on Vercel.
-
-## Run locally
-
-```sh
-npm ci
+```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Validate
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```sh
-npm run lint
-npm run build
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-The site has no automated test suite. Project descriptions reflect the linked source rather than claiming production deployments or measured results.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Public content
+## Learn More
 
-The previous CV is intentionally absent. Do not add a CV download or replacement document without a separate content review. Removed template biography and writing pages are not part of the public sitemap. Canonical URLs always use https://miladcodes.com, including preview builds.
+To learn more about Next.js, take a look at the following resources:
 
-`NEXT_PUBLIC_GA_ID` optionally enables Google Analytics. No environment variables are required for portfolio content.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
